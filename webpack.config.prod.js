@@ -39,7 +39,7 @@ export default {
           minifyURLs:true
         },
         inject: true,
-        trackJSToken:"748f46a449e243a18ccc1c0d1eeb69e4"
+        // trackJSToken:"748f46a449e243a18ccc1c0d1eeb69e4"
     }),
     new webpack.optimize.DedupePlugin(),
     // Minify JS
