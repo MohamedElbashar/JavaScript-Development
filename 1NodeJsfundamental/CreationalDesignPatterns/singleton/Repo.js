@@ -4,7 +4,7 @@ var repo = function () {
 
     var save = function (task) {
         called++;
-        console.log('Saving ' + task + 
+        console.log('Saving ' + task +
                     ' Called ' + called + ' times');
     }
     console.log('newing up task repo');
