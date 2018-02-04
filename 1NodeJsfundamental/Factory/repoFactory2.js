@@ -8,6 +8,4 @@ var repoFactory = function(){
         repos[repo.name] = require(repo.source)()
     });
 };
-
-
 module.exports = new repoFactory;
