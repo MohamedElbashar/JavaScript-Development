@@ -7,7 +7,7 @@ var repoFactory = function () {
                 return this.taskRepo;
             } else {
                 this.taskRepo = require('./taskRepository')();
-                // config -- 
+                // config --
                 return this.taskRepo;
             }
 
