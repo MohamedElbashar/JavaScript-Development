@@ -1,4 +1,4 @@
-var Calc = function (start) {
+ var Calc = function (start) {
 	var self = this;
 
 	this.add = function (x) {
