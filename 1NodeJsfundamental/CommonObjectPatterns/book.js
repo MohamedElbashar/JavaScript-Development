@@ -1,18 +1,40 @@
 var Book = function (name, price) {
+	var priceChangingCallbacks = [];
+		priceChangedCallbacks = [];
+
 	this.name = function (val) {
-  
+		if (val && name !== val) {
+			name = val;
+		}
+
+		return name;
 	};
 
 	this.price = function (val) {
+		var i, il;
+		if (val && price !== val) {
+			for (i = 0, il = priceChangingCallbacks.length; i < il; i++) {
+				if (!priceChangingCallbacks[i](this, val)) {
+					return price;
+				}
+			}
 
+			price = val;
+
+			for (i = priceChangedCallbacks.length - 1; i >= 0; i--) {
+				priceChangedCallbacks[i](this);
+			}
+		}
+
+		return price;
 	};
 
 	this.onPriceChanging = function (callback) {
-
+		priceChangingCallbacks.push(callback);
 	};
 
 	this.onPriceChanged = function (callback) {
-
+		priceChangedCallbacks.push(callback);
 	};
 };
 
